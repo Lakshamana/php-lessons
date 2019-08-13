@@ -8,31 +8,25 @@
 
   <body>
     <?php
-      // int 
-      $myint = 1;
+      // array - default = indexed to 0
+      $messages = array('msg1', 'msg2', 'msg3', 'msg4', 'msg5');
+      $br = '<br/>';
 
-      // float
-      $myfloat = 3.14156;
+      // Custom indexing - alphanumeric keys
+      // $messages = array(1 => 'msg1', 'a'=> 'msg2', 'msg3', 'msg4', 'msg5');
+      // echo $messages['a']; // msg2
+      // echo $messages[2]; // msg3
 
-      // boolean
-      $mybool = true;
+      echo $messages[2], $br; // msg3
 
-      // strings
-      $mystr = 'My Fancy String';
-      // $mystr = $mystr + '<br/>'; -- wrong
-      $mystr .= ' - now changed!';
+      // Appending values to arrays
+      $new_val = 'test';
+      array_push($messages, $new_val);
 
-      // Reading var values
-      echo 'myint: ', $myint, '<br/>';
-      echo 'myfloat: ', $myfloat, '<br/>';
-      echo 'mybool: ', $mybool, '<br/>';
-      echo 'mystr: ', $mystr, '<br/>';
-
-      # Concatenations
-      echo 'concat 1st way: ', $mystr.' - '.$myint, '<br/>';
-      echo 'concat 2nd way: ', "$mystr - $myint";
-
-      // array
+      // print whole array
+      var_dump($messages);
+      echo $br;
+      print_r($messages);
     ?>
   </body>
 </html>
