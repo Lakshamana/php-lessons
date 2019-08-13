@@ -8,8 +8,31 @@
 
   <body>
     <?php
-      echo 'teste echo<br/>';
-      print 'teste print'
+      // int 
+      $myint = 1;
+
+      // float
+      $myfloat = 3.14156;
+
+      // boolean
+      $mybool = true;
+
+      // strings
+      $mystr = 'My Fancy String';
+      // $mystr = $mystr + '<br/>'; -- wrong
+      $mystr .= ' - now changed!';
+
+      // Reading var values
+      echo 'myint: ', $myint, '<br/>';
+      echo 'myfloat: ', $myfloat, '<br/>';
+      echo 'mybool: ', $mybool, '<br/>';
+      echo 'mystr: ', $mystr, '<br/>';
+
+      # Concatenations
+      echo 'concat 1st way: ', $mystr.' - '.$myint, '<br/>';
+      echo 'concat 2nd way: ', "$mystr - $myint";
+
+      // array
     ?>
   </body>
 </html>
