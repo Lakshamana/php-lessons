@@ -9,24 +9,16 @@
   <body>
     <?php
       // array - default = indexed to 0
-      $messages = array('msg1', 'msg2', 'msg3', 'msg4', 'msg5');
+      $songs = array('disco', 'rock');
       $br = '<br/>';
 
-      // Custom indexing - alphanumeric keys
-      // $messages = array(1 => 'msg1', 'a'=> 'msg2', 'msg3', 'msg4', 'msg5');
-      // echo $messages['a']; // msg2
-      // echo $messages[2]; // msg3
-
-      echo $messages[2], $br; // msg3
-
-      // Appending values to arrays
-      $new_val = 'test';
-      array_push($messages, $new_val);
+      $songs[0] = array('Gimme the night', 'Dance little lady');
+      $songs[1] = array('Hotel California', 'Sultans of swing');
 
       // print whole array
-      var_dump($messages);
+      print_r($songs);
       echo $br;
-      print_r($messages);
+      echo 'Greatest disco songs of all times: '.$songs[0][0]
     ?>
   </body>
 </html>
