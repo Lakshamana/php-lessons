@@ -10,8 +10,6 @@
 	</head>
 
 	<body>
-		
-
 		<div class="container">
 			<div class="row">
 				<h1>Detalhes do produto</h1>

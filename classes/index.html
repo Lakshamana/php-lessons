@@ -1,0 +1,30 @@
+<html>
+  <head><title>Calculadora em PHP</title></head>
+  <body>
+    <form action="classes/calculate.php" method="post">
+      <label for="n1">
+        First Number
+        <input type="number" name="n1">
+      </label>
+      <label for="n2">
+        Second Number
+        <input type="number" name="n2">
+      </label>
+      <br>
+      Operation: <br>
+      <label for="operation">
+        <input type="radio" name="operation" value="+">+
+      </label>
+      <label for="operation">
+        <input type="radio" name="operation" value="-">-
+      </label>
+      <label for="operation">
+        <input type="radio" name="operation" value="*">*
+      </label>
+      <label for="operation">
+        <input type="radio" name="operation" value="/">/
+      </label>
+      <input type="submit" value="Calculate">
+    </form>
+  </body>
+</html>
