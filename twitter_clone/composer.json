@@ -1,0 +1,13 @@
+{
+    "name": "arjuna/twitter_clone",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Lakshamana",
+            "email": "guitrompa1@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
