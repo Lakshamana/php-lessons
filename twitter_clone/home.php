@@ -18,6 +18,25 @@ if (!isset($_SESSION['username'])) {
 		<!-- bootstrap - link cdn -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+		<script>
+			$(document).ready(function() {
+        $('#btn-tweet').click(function(e) {
+					e.preventDefault()
+          const content = $('#text-tweet').val()
+          if (content) {
+            $.ajax({
+              url: 'services/create_tweet.php',
+              method: 'POST',
+							data: $('#tweet-form').serialize(),
+              success: function(data) {
+								$('#text-tweet').val('')
+								alert(data)
+              }
+            })
+          }
+        })
+			})
+		</script>
 	</head>
 
 	<body>
@@ -45,22 +64,46 @@ if (!isset($_SESSION['username'])) {
 
 
 	    <div class="container">
-
-	    	<br /><br />
-
-	    	<div class="col-md-4"></div>
-				<div class="col-md-4">
-					Authenticated User!
-					Welcome to Twitter Clone, <?= $_SESSION['username']?>
+				<div class="col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h4 style="padding:0.5em"><?= $_SESSION['username'] ?></h4>
+							<hr>
+							<div class="col-md-6">
+								TWEETS <br> 1
+							</div>
+							<div class="col-md-6">
+								FOLLOWERS <br> 1
+							</div>
+						</div>
+					</div>
 				</div>
-			<div class="col-md-4"></div>
-
-			<div class="clearfix"></div>
-			<br />
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-			<div class="col-md-4"></div>
-
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<form id="tweet-form" class="input-group">
+								<input
+									id="text-tweet"
+									name="content"
+									class="form-control"
+									type="text"
+									placeholder="What's happening now?"
+									maxlength="140"
+								>
+								<span class="input-group-btn">
+									<button id="btn-tweet" class="btn btn-default" type="submit">Tweet</button>
+								</span>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h4><a href="#">Search for people...</a></h4>
+						</div>
+					</div>
+				</div>
 		</div>
 
 
